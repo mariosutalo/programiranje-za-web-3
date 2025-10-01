@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // verzija 1 - u kojom pravimo polje pa nakadno dodajemo objekt u polje
+        // pravimo varijablu students koja u sebi sprema prazno polje
+        const students = []
+        // u polje students dodajemo objekt sa svojstvima:
+        students.push({ name: 'Mario', surname: 'Šutalo', age: 40 })
+
+
+        // verzija 2 - pravimo varijablu students1 koja u sebi sprema
+        // polje i u isto vrijeme dodaje jedan objekt
+        const students1 = [{ name: 'Mario', surname: 'Šutalo', age: 40 }]
+
+        // u polje students1 dodati još 2 učenika
+        students1.push({ name: 'Anja', surname: 'Sutalo', age: 25 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+        students1.push({ name: 'David', surname: 'Šutalo', age: 23 })
+
+        // iz polja students1 pobrisati zadnji objekt
+        students1.pop()
+
+        // ispis imena prvog učenika u konzolu
+        console.log('First student name:', students1[0].name)
+
+        // Ispis prezimena drugog učenika
+        console.log('Second student surname is:', students1[1].surname)
+
+        // Izračunati prosječnu dob učenika u polju (array) students1 
+        // pomoću for petlje
+        let studentTotalAge = 0
+        for (let index = 0; index < students1.length; index++) {
+            //console.log(`Student name is: ${students1[index].name}`)
+            studentTotalAge = studentTotalAge + students1[index].age
+        }
+        const studentAverageAge = studentTotalAge / students1.length
+        console.log('Student average age is:', studentAverageAge)
+
+    </script>
+</body>
+
+</html>
