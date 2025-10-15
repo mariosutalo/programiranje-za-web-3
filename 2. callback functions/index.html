@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // funkcija prima tri 3 parametra
+        // od koji su prva dva brojevi, a treći tijelo funkcije
+        function calculateSurfaceArea(a, b, callback) {
+            const surfaceArea = a * b
+            // na ovaj način pozivamo callback funkciju kada nam odgovara
+            callback()
+        }
+
+        // pozivamo funkciju sa parametrima: 12, 4 i tijelom funkcije
+        calculateSurfaceArea(12, 4, function(){
+            console.log('Callback called!')
+        })
+
+        function callCallbackAfterNSeconds(seconds, callback) {
+            setTimeout(() => {
+               //console.log('Timeout expired!')
+               callback() 
+            }, seconds * 1000)
+        }
+
+        callCallbackAfterNSeconds(5, function(){
+            console.log('callback function called')
+        })
+        // callCallbackAfterNSeconds(1, () => {
+        //     console.log('callback function called')
+        // })
+
+
+        setTimeout(function() {
+            console.log('Time expired')
+        }, 2000)
+    </script>
+</body>
+
+</html>
