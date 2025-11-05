@@ -1,0 +1,8 @@
+1. korisnik upiše www.youtube.com na klijentu
+2. (npr. google chrome), klijent pita dns server koja je
+ip adresa od servera na kojem se nalazi youtube.com
+3.dns server ima veliku tablicu u kojoj su nazivi domena i pridružene 
+ip adrese, dns server pogleda ima li youtube.com u tablici i ako ima
+klijentu vrati ip adresu od youtube.com servera
+4. klijent se tek tada spaja na yotube.com server pomoću ip adrese
+i tada počinje klijent - server komunikacija
