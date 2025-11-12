@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateCirleSurface(r, surfaceCallback) {
+            const circleSurface = r * r * 3.14
+            surfaceCallback(circleSurface)
+        }
+
+        calculateCirleSurface(12, function(surface) {
+            console.log('surface callback called, area is:', surface)
+        })
+
+    </script>
+</body>
+</html>

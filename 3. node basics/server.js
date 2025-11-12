@@ -5,7 +5,8 @@ const server = http.createServer((req, res) => {
     // res.write('Hi from node.js')
     // res.write(':)')
     res.setHeader('Content-Type', 'text/html')
-    res.write('<h2>Hi, this is heading</h2>')
+    res.write('<h5>Hi, this is heading</h5>')
+    res.write('<h5>Hi, this is heading</h5>')
     res.end()
 })
 
