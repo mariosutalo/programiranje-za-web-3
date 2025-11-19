@@ -1,0 +1,18 @@
+Zadatak 1:
+Napraviti polje cars u koje će te unijeti
+8 automobila. Svojstva svakog automobila su:
+Naziv, model, cijena, godina proizvodnje
+
+Zadatak 2.
+U varijablu totalCarsPrice zbrojiti ukupnu cijenu svih automobila
+U konzoli prikazati tekst: Car total price is: totalCarsPrice
+
+Zadatak 3.
+U varijablu averageCarPrice izračunati prosječnu cijenu automobila
+te u konzoli ispisati tekst: Car average price is: averageCarPrice
+
+Zadatak 4. (Za znatiželjne :)
+
+U varijablu expensiveCartCount spremiti koliko je automobila
+skuplje od 50.000 eura i ispisati u konzolu: Number of expensive
+car is: expensiveCartCount

@@ -1,4 +1,4 @@
 192.168.1.209:560 - cs go igrica
 192.168.1.209:300 - whatsapp
-broj portova je od 0 - 65536
+broj portova je od 0 - 65535
 192.168.1.209:6543 - viber
