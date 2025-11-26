@@ -1,2 +1,5 @@
 Node.js Crash Course Tutorial
 https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU
+
+nodemon alternative za one kojima nodemon ne radi
+node --inspect --watch-path=./ ./app.js
