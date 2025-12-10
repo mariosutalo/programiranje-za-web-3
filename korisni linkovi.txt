@@ -7,3 +7,13 @@ node --inspect --watch-path=./ ./index.js
 web shop
 ejs partials
 https://dev.to/arkadiptakundu/how-to-create-partials-using-ejs-for-reusable-code-3ic0
+
+
+procedura za one koji nemaju zadnju verziju projekta
+- skinuti moj repo programiranje-za-web-3 na radnu površinu te raspakirati
+- u svom projektu uraditi commit i push ako imate ikakvih promjena
+- iskopirati mapu 4. web shop i zalijepiti je u svoj repozitorij (ako imate mapu 4. web shop potrebno ju je prije toga izbrisati)
+- u .gitignore dodati ako nije dodano redak:4. web shop/node_modules
+- u terminalu se prebaciti u mapu 4. web shop
+- u terminalu pokrenuti naredbu npm i
+- pokrenuti projekt:node --inspect --watch-path=./ ./index.js
