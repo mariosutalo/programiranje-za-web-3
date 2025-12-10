@@ -3,3 +3,7 @@ https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKx
 
 nodemon alternative za one kojima nodemon ne radi
 node --inspect --watch-path=./ ./index.js
+
+web shop
+ejs partials
+https://dev.to/arkadiptakundu/how-to-create-partials-using-ejs-for-reusable-code-3ic0
