@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./shared/head.ejs') %>
-<body>
-    <%- include('./shared/header.ejs') %>
-    <p>Hi from home page :)</p>
-    <h1><%= productName %></h1>
-    <%- include('./shared/footer.ejs') %>
-</body>
+
+    <body>
+        <%- include('./shared/header.ejs') %>
+            <main>
+                <section>
+                    <div class="products-div">
+                        <div>
+                            <img src="/assets/product images/image3.jpg" alt="">
+                            <a href="#">Asus rog i5 12400f</a>
+                            <div>
+                                <img src="/assets/star icon.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include('./shared/footer.ejs') %>
+    </body>
+
 </html>

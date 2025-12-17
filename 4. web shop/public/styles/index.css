@@ -1,0 +1,8 @@
+.products-div {
+    width: 100%;
+    padding: 3rem 20px;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aqua;
+}
