@@ -19,3 +19,4 @@ procedura za one koji nemaju zadnju verziju projekta
 - u terminalu se prebaciti u mapu 4. web shop
 - u terminalu pokrenuti naredbu npm i
 - pokrenuti projekt:node --inspect --watch-path=./ ./index.js
+- nodemon verzija : nodemon index
