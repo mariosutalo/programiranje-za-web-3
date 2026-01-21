@@ -2,4 +2,13 @@
     --primary: #be3279;
     --primary-hover:#df4994;
     --color2: #89ba19;
+    --color3: #f6f8f6;
+    --color4: #111813;
+    --color5:#9b9b9b;
+    --main-font: "sans-serif"
+}
+
+body {
+    background-color: var(--color3);
+    font-family: var(--main-font);
 }
