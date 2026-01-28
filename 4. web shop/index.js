@@ -6,7 +6,25 @@ app.use(express.static('public'))
 
 
 app.get('/', (req, res) => {
-    res.render('index', {productName: 'Gaming Pc'})
+    const fakeProducts = [
+        {
+            image: '/assets/product images/image2.jpg',
+            name: 'Asus rog motherboard',
+            averageRating: 4.1,
+            ratingCount: 10,
+            price: 120.50,
+            stock: 3
+        },
+        {
+            image: '/assets/product images/image3.jpg',
+            name: 'Asus rog motherboard',
+            averageRating: 3.1,
+            ratingCount: 10,
+            price: 120.50,
+            stock: 3
+        }
+    ]
+    res.render('index', { products: fakeProducts, pageName: 'Home Page' })
 })
 
 app.get('/products', (req, res) => {

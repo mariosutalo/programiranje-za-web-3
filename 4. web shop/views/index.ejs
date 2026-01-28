@@ -6,30 +6,34 @@
         <%- include('./shared/header.ejs') %>
             <main>
                 <section>
-                    <div class="products-div">
-                        <div class="product-div">
-                            <img class="product-img" src="/assets/product images/image3.jpg" alt="">
-                            <div class="product-info-div">
-                                <a class="product-name-a" href="#">Asus rog i5 12400f</a>
-                                <div class="rating-div">
-                                    <img class="rating-img" src="/assets/star icon.png" alt="">
-                                    <span class="rating-count-span">4.2 (13)</span>
-                                </div>
-                                <div class="price-stock-div">
-                                    <span class="price-span">
-                                        700,55€
-                                    </span>
-                                    <div class="cirle-stock-div">
-                                        <div class="cirle-div"></div>
-                                        <span class="stock-span">
-                                            In stock
-                                        </span>
+                    <% if(locals.products.length===0) {%>
+                        <h2>No products</h2>
+                        <% } else { %>
+                            <div class="products-div">
+                                <% locals.products.forEach(product=> { %>
+                                    <div class="product-div">
+                                        <img class="product-img" src="/assets/product images/image3.jpg" alt="">
+                                        <div class="product-info-div">
+                                            <a class="product-name-a" href="#">Asus rog i5 12400f</a>
+                                            <div class="rating-div">
+                                                <img class="rating-img" src="/assets/star icon.png" alt="">
+                                                <span class="rating-count-span">4.2 (13)</span>
+                                            </div>
+                                            <div class="price-stock-div">
+                                                <span class="price-span">
+                                                    700,55€
+                                                </span>
+                                                <div class="cirle-stock-div">
+                                                    <div class="cirle-div"></div>
+                                                    <span class="stock-span">
+                                                        In stock
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <%})}%>
                             </div>
-
-                        </div>
-                    </div>
                 </section>
             </main>
             <%- include('./shared/footer.ejs') %>
