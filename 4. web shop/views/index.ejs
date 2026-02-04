@@ -12,23 +12,40 @@
                             <div class="products-div">
                                 <% locals.products.forEach(product=> { %>
                                     <div class="product-div">
-                                        <img class="product-img" src="/assets/product images/image3.jpg" alt="">
+                                        <img class="product-img" src="<%= product.image %>" alt="">
                                         <div class="product-info-div">
-                                            <a class="product-name-a" href="#">Asus rog i5 12400f</a>
+                                            <a class="product-name-a" href="#">
+                                                <%= product.name %>
+                                            </a>
                                             <div class="rating-div">
                                                 <img class="rating-img" src="/assets/star icon.png" alt="">
-                                                <span class="rating-count-span">4.2 (13)</span>
+                                                <span class="rating-count-span">
+                                                    <%= `${product.averageRating} (${product.ratingCount})` %>
+                                                </span>
                                             </div>
                                             <div class="price-stock-div">
                                                 <span class="price-span">
-                                                    700,55€
+                                                    <%= `${product.price} €` %>
                                                 </span>
-                                                <div class="cirle-stock-div">
-                                                    <div class="cirle-div"></div>
-                                                    <span class="stock-span">
-                                                        In stock
-                                                    </span>
-                                                </div>
+                                                <% if (product.stock> 0) { %>
+                                                    <div class="cirle-stock-div">
+                                                        <div class="in-stock-cirle-div circle-div"></div>
+                                                        <span class="stock-span">
+                                                            In stock
+                                                        </span>
+                                                    </div>
+                                                    <% } else { %>
+                                                        <div class="cirle-stock-div">
+                                                            <div class="out-of-stock-cirle-div circle-div"></div>
+                                                            <span class="stock-span">
+                                                                Out of stock
+                                                            </span>
+                                                        </div>
+                                                        <% } %>
+
+
+
+
                                             </div>
                                         </div>
                                     </div>
