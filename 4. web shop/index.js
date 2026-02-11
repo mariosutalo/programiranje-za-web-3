@@ -1,4 +1,32 @@
 import express from 'express'
+import mysql from 'mysql2'
+
+const dbConnection = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'password',
+    database: 'shop'
+})
+
+dbConnection.connect((error) => {
+    if(error) {
+        console.log('error connecting to db:', error)
+        return
+    }
+
+    dbConnection.query(
+        'select count(*) as productsCount from product',
+        (error, results, fields) => {
+            if(error) {
+                console.log('error executing query', error)
+                return
+            }
+            console.log('simple select data', results)
+        }
+    )
+    
+})
 
 const app = express()
 app.set('view engine', 'ejs')
