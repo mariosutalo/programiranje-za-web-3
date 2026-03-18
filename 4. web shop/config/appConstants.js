@@ -1,4 +1,4 @@
 export const appConstants = {
-  productsPerPage: 10,
+  productsPerPage: 6,
 };
 

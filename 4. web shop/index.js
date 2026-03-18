@@ -43,7 +43,12 @@ app.get("/", async (req, res) => {
     const [countResults] = await dbConnection.query(countProductsQuery);
     const productsCount = countResults[0].productsCount;
     const pagesCount = Math.ceil(productsCount / appConstants.productsPerPage);
-    res.render("index", { products: productsResults, title: "Home Page" });
+    res.render("index", {
+      products: productsResults,
+      title: "Home Page",
+      currentPage: currentPage,
+      pagesCount: pagesCount
+    });
   } catch (error) {
     console.log("error executing query", error);
     res.render("server-error", { title: "Server Error :(" });
