@@ -1,5 +1,6 @@
 import express from "express";
 import mysql from "mysql2/promise";
+import { appConstants } from "./config/appConstants.js";
 
 let dbConnection = null;
 try {
@@ -20,22 +21,28 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
-  const productsPerPage = 10
-  const selectProductsQuery = `
-    select id, name, price, stock
-    from product
-    limit 10 offset 0;`;
   const countProductsQuery = `
     select count(*) as productsCount
     from product;`;
 
   try {
+    let currentPage;
+    if (isNaN(Number(req.query.page))) {
+      currentPage = 1;
+    } else {
+      currentPage = Number(req.query.page);
+    }
+    const offset = (currentPage - 1) * appConstants.productsPerPage;
+
+    const selectProductsQuery = `
+    select id, name, price, stock
+    from product
+    limit ${appConstants.productsPerPage} offset ${offset};`;
+
     const [productsResults] = await dbConnection.query(selectProductsQuery);
     const [countResults] = await dbConnection.query(countProductsQuery);
-    const productsCount = countResults[0].productsCount
-    const pagesCount = Math.ceil(productsCount/productsPerPage)
-    const currentPage = req.query.page
-
+    const productsCount = countResults[0].productsCount;
+    const pagesCount = Math.ceil(productsCount / appConstants.productsPerPage);
     res.render("index", { products: productsResults, title: "Home Page" });
   } catch (error) {
     console.log("error executing query", error);
