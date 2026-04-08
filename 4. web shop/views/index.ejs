@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<% locals.pageStyles.push("/styles/pages/index.css") %>
 <%- include('./shared/head.ejs') %>
     <body>
         <%- include('./shared/header.ejs') %>
@@ -51,13 +52,14 @@
                                     <%})}%>
                             </div>
                             <div class="pagination-div">
-                                <% if(locals.currentPage > 1) { %>
-                                    <a href="?page=<%= locals.currentPage - 1 %>">Previous</a>
-                                <% } %>
-                                <% if(locals.currentPage < locals.pagesCount) {%>
-                                    <a href="?page=<%= locals.currentPage + 1 %>">Next</a>
-                                <% } %>
-                            </div>
+                            <% if(locals.currentPage> 1) { %>
+                                <a class="page-link" href="?page=<%= locals.currentPage - 1 %>">Previous</a>
+                            <% } %>
+                            <span><%= locals.currentPage %> of <%= locals.pagesCount %></span>
+                            <% if(locals.currentPage < locals.pagesCount) {%>
+                                <a class="page-link" href="?page=<%= locals.currentPage + 1 %>">Next</a>
+                            <% } %>
+                        </div>
                 </section>
             </main>
             <%- include('./shared/footer.ejs') %>

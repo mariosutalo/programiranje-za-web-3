@@ -12,3 +12,9 @@ body {
     background-color: var(--color3);
     font-family: var(--main-font);
 }
+
+.page-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}

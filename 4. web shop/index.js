@@ -20,6 +20,18 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+// middleware se koristi da se kod u njemu izvrši pri posjeti
+// bilo koje rute, npr. localhost:3000/products
+app.use((req, res, next) => {
+  res.app.locals.pageStyles = [];
+  next();
+});
+
+app.use((req, res, next) => {
+  console.log("page called");
+  next();
+});
+
 app.get("/", async (req, res) => {
   const countProductsQuery = `
     select count(*) as productsCount
@@ -47,7 +59,7 @@ app.get("/", async (req, res) => {
       products: productsResults,
       title: "Home Page",
       currentPage: currentPage,
-      pagesCount: pagesCount
+      pagesCount: pagesCount,
     });
   } catch (error) {
     console.log("error executing query", error);
