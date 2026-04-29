@@ -10,6 +10,11 @@ router.get("/", (req, res) => {
 });
 
 router.get("/details", (req, res) => {
-    const productId = req.query.id
-    res.render("product-details", {title: 'Product Details'})
-})
+  const productId = req.query.id;
+  const productIdAsNumber = Number(productId);
+  if (Number.isInteger(productIdAsNumber) === false || productIdAsNumber < 1) {
+    res.render("server-error");
+    return
+  }
+  res.render("product-details", { title: "Product Details" });
+});

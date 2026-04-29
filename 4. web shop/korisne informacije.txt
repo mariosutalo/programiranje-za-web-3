@@ -20,3 +20,6 @@ procedura za one koji nemaju zadnju verziju projekta
 - u terminalu pokrenuti naredbu npm i
 - pokrenuti projekt:node --inspect --watch-path=./ ./index.js
 - nodemon verzija : nodemon index
+
+- code refractoring: https://refactoring.guru/refactoring
+- DRY: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself

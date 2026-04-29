@@ -46,6 +46,9 @@ app.listen(3000, (error) => {
 });
 
 app.use("/", indexRouter);
+// oba url-a ce ući u productRouter in pokrenuti odgovarajuci endpoint
+// localhost:3000/product
+// localhost:3000/product/details
 app.use("/product", productRouter);
 app.use("/blog", blogRouter);
 app.use("/about", aboutRouter);
