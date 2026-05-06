@@ -4,7 +4,8 @@
   <%- include('./shared/head.ejs') %>
   <body>
     <%- include('./shared/header.ejs') %>
-    <p>product details page</p>
+    <h1><%= locals.productDetails.name %></h1>
+    <h2><%= locals.productDetails.price %> Eur</h2>
     <%- include('./shared/footer.ejs') %>
   </body>
 </html>
