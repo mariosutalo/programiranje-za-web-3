@@ -10,6 +10,8 @@
                         <h2>No products</h2>
                         <% } else { %>
                             <div class="products-div">
+                                <!-- radimo iteraciju (učitavamo objekt po objekt iz polja) products -->
+                                 <!-- i pravimo html -->
                                 <% locals.products.forEach(product=> { %>
                                     <div class="product-div">
                                         <img class="product-img" src="<%= product.image %>" alt="">
@@ -42,10 +44,6 @@
                                                             </span>
                                                         </div>
                                                         <% } %>
-
-
-
-
                                             </div>
                                         </div>
                                     </div>
