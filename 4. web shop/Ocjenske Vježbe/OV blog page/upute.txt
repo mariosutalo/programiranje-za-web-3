@@ -1,0 +1,4 @@
+1. uradit import blog.sql skripte u bazu
+2. u blog ruti na root endpointu ("/"):
+    - povući sve blogove iz baze i prikazati na stranici (blog.ejs) kao na slici blogs.jpg
+    - napraviti css za stranicu blog.ejs u koji ćete stavljati stilove
