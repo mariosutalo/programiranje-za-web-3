@@ -1,0 +1,5 @@
+1. uradit import testemonial.sql skripte u bazu
+2. Napraviti novu rutu ("/testemonial")
+2. u testemonial ruti na root endpointu ("/"):
+    - povući sve testemoniale iz baze i prikazati na stranici (testemonial.ejs) kao na slici testemonials.jpg
+    - napraviti css za stranicu testemonial.ejs u koji ćete stavljati stilove
