@@ -22,7 +22,7 @@ router.get("/details", async (req, res) => {
   }
   const productDetailsQuery = `
   select *
-  from product
+  from products
   where id=${productIdAsNumber};
   `;
   const [productDetailsResult] = await dbConnection.query(productDetailsQuery);
