@@ -1,11 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <% locals.pageStyles.push("/styles/pages/product-details.css") %> 
-  <%- include('./shared/head.ejs') %>
+  <% locals.pageStyles.push("/styles/pages/productDetails.css") %> <%-
+  include('./shared/head.ejs') %>
   <body>
     <%- include('./shared/header.ejs') %>
-    <h1><%= locals.productDetails.name %></h1>
-    <h2><%= locals.productDetails.price %> Eur</h2>
+    <section>
+      <div class="container-div">
+        <div class="product_div">
+          <!-- Left Side: Product Image -->
+          <div class="product-media_div">
+            <img
+              src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&q=80&w=1000"
+              alt="AeroPress GO Travel Coffee Maker"
+              class="product-image_img"
+              onerror="
+                this.onerror = null;
+                this.src =
+                  'https://placehold.co/600x600/e2e8f0/475569?text=Coffee+Maker';
+              "
+            />
+          </div>
+
+          <!-- Right Side: Product Information -->
+          <div class="product-content_div">
+            <span class="product-category_span">Coffee & Brewing</span>
+            <h1 class="product-title_h1">AeroPress GO Travel Coffee Maker</h1>
+
+            <!-- Price Section -->
+            <div class="product-price-container_div">
+              <p class="product-price-label_p">Price</p>
+              <span class="product-price_span">$39.95</span>
+            </div>
+
+            <!-- Stock Status -->
+            <div class="product-stock-container_div">
+              <span class="product-stock-label_span">Availability</span>
+              <div class="product-stock-badge_div">
+                <svg
+                  class="product-stock-icon_svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="product-stock-status_span">In Stock</span>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="product-description-container_div">
+              <h2 class="product-description-heading_h2">Description</h2>
+              <p class="product-description_p">
+                The compact AeroPress GO is the ultimate portable coffee brewer.
+                Designed for travel, camping, or the office, it quickly makes
+                smooth, rich, and grit-free coffee in just minutes. Includes
+                chamber, plunger, micro-filters, mug with lid, scoop, and
+                stirrer.
+              </p>
+            </div>
+
+            <!-- Actions Section -->
+            <div class="product-actions_div">
+              <div class="quantity-selector-container_div">
+                <label for="product-qty-input" class="quantity-label_label"
+                  >Quantity</label
+                >
+                <div class="quantity-control_div">
+                  <button
+                    type="button"
+                    class="quantity-btn-minus_button"
+                    onclick="decrementQty()"
+                    aria-label="Decrease quantity"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="product-qty-input"
+                    class="quantity-val_input"
+                    value="1"
+                    min="1"
+                    max="99"
+                    readonly
+                  />
+                  <button
+                    type="button"
+                    class="quantity-btn-plus_button"
+                    onclick="incrementQty()"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <button type="button" class="add-to-cart_button">
+                <svg
+                  class="cart-icon_svg"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+                <span class="add-to-cart-text_span">ADD TO CART</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <%- include('./shared/footer.ejs') %>
   </body>
 </html>

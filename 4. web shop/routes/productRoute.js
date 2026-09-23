@@ -21,8 +21,8 @@ router.get("/details", async (req, res) => {
     return;
   }
   const productDetailsQuery = `
-  select *
-  from products
+  select id, name, price, stock, description, image_path as imagePath
+  from product
   where id=${productIdAsNumber};
   `;
   const [productDetailsResult] = await dbConnection.query(productDetailsQuery);

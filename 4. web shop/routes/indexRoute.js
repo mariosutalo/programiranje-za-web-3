@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   // broji koliko je ukupno proizvoda u tablici product
   const countProductsQuery = `
     select count(*) as productsCount
-    from products;`;
+    from product;`;
 
   // ako dođe do greške try bloku, catch blok će je uhvatiti
   // i onda u catch blocku možemo raditi sa tog greškom što želimo
@@ -35,8 +35,8 @@ router.get("/", async (req, res) => {
     // from product
     // limit 6 offset 0;`;
     const selectProductsQuery = `
-    select id, name, price, stock
-    from products
+    select id, name, price, stock, image_path as imagePath
+    from product
     limit ${appConstants.productsPerPage} offset ${offset};`;
 
     // Za prvu stranicu povlači prvih 6 proizvoda
