@@ -9,27 +9,21 @@
         <div class="product_div">
           <!-- Left Side: Product Image -->
           <div class="product-media_div">
+            
             <img
-              src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&q=80&w=1000"
-              alt="AeroPress GO Travel Coffee Maker"
+              src="<%= productDetails.imagePath %>"
               class="product-image_img"
-              onerror="
-                this.onerror = null;
-                this.src =
-                  'https://placehold.co/600x600/e2e8f0/475569?text=Coffee+Maker';
-              "
             />
           </div>
 
           <!-- Right Side: Product Information -->
           <div class="product-content_div">
-            <span class="product-category_span">Coffee & Brewing</span>
-            <h1 class="product-title_h1">AeroPress GO Travel Coffee Maker</h1>
+            <h1 class="product-title_h1"><%= productDetails.name  %></h1>
 
             <!-- Price Section -->
             <div class="product-price-container_div">
               <p class="product-price-label_p">Price</p>
-              <span class="product-price_span">$39.95</span>
+              <span class="product-price_span"><%= productDetails.price  %> €</span>
             </div>
 
             <!-- Stock Status -->
@@ -55,11 +49,7 @@
             <div class="product-description-container_div">
               <h2 class="product-description-heading_h2">Description</h2>
               <p class="product-description_p">
-                The compact AeroPress GO is the ultimate portable coffee brewer.
-                Designed for travel, camping, or the office, it quickly makes
-                smooth, rich, and grit-free coffee in just minutes. Includes
-                chamber, plunger, micro-filters, mug with lid, scoop, and
-                stirrer.
+                <%= productDetails.description  %>
               </p>
             </div>
 
