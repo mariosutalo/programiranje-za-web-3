@@ -37,6 +37,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.urlencoded({ extended: true }));
+
 app.listen(3000, (error) => {
   if (error) {
     console.log("server cant be started", error);

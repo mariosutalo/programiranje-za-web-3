@@ -267,3 +267,9 @@
 .add-to-cart-text_span {
   display: inline-block;
 }
+
+.add-to-cart-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

@@ -8,10 +8,12 @@ export const router = express.Router();
 
 const productIdSchema = z.number().int().positive();
 
+//localhost:3000/product
 router.get("/", (req, res) => {
   res.render("products");
 });
 
+//localhost:3000/product/details
 router.get("/details", async (req, res) => {
   const productId = req.query.id;
   const productIdAsNumber = Number(productId);
@@ -32,3 +34,7 @@ router.get("/details", async (req, res) => {
     productDetails: productDetailsResult[0],
   });
 });
+
+router.post("/add-to-cart", (req, res) => {
+
+})
