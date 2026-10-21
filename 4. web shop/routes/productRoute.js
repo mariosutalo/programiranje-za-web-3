@@ -36,5 +36,8 @@ router.get("/details", async (req, res) => {
 });
 
 router.post("/add-to-cart", (req, res) => {
-
-})
+  const productId = Number(req.body.id)
+  const quantity = Number(req.body.quantity)
+  
+  res.redirect("/product/details?id=12");
+});

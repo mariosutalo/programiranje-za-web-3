@@ -3,8 +3,9 @@ import mysql from "mysql2/promise";
 import { appConstants } from "./config/appConstants.js";
 import { router as indexRouter } from "./routes/indexRoute.js";
 import { router as productRouter } from "./routes/productRoute.js";
-import { router as blogRouter} from "./routes/blogRoute.js";
-import { router as aboutRouter} from "./routes/aboutRoute.js";
+import { router as blogRouter } from "./routes/blogRoute.js";
+import { router as aboutRouter } from "./routes/aboutRoute.js";
+import cookieParser from "cookie-parser";
 
 // kada je dodana riječ export varijabla se može uvesti u druge .js datoteke
 export let dbConnection = null;
@@ -23,6 +24,7 @@ try {
 
 const app = express();
 app.set("view engine", "ejs");
+
 app.use(express.static("public"));
 
 // middleware se koristi da se kod u njemu izvrši pri posjeti
@@ -32,12 +34,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 app.use((req, res, next) => {
-  console.log("page called");
+  let sessionId = req.cookies.sessionId;
+  console.log("middleware called");
   next();
 });
-
-app.use(express.urlencoded({ extended: true }));
 
 app.listen(3000, (error) => {
   if (error) {
