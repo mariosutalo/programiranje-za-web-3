@@ -1,11 +1,11 @@
 import express from "express";
 import mysql from "mysql2/promise";
-import { appConstants } from "./config/appConstants.js";
 import { router as indexRouter } from "./routes/indexRoute.js";
 import { router as productRouter } from "./routes/productRoute.js";
 import { router as blogRouter } from "./routes/blogRoute.js";
 import { router as aboutRouter } from "./routes/aboutRoute.js";
 import cookieParser from "cookie-parser";
+import { v4 as uuidv4 } from "uuid";
 
 // kada je dodana riječ export varijabla se može uvesti u druge .js datoteke
 export let dbConnection = null;
@@ -39,7 +39,14 @@ app.use(cookieParser());
 
 app.use((req, res, next) => {
   let sessionId = req.cookies.sessionId;
-  console.log("middleware called");
+  if (!sessionId) {
+    sessionId = uuidv4();
+    res.cookie("sessionId", sessionId, {
+      maxAge: 365 * 24 * 60 * 60 * 1000,
+      httpOnly: true,
+      sameSite: "strict",
+    });
+  }
   next();
 });
 
