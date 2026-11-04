@@ -50,6 +50,17 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(async (req, res, next) => {
+  const cartItemsCountQuery = `select count(*) as count from cart_item 
+                               where cart_item.session_uuid = ?;`;
+  const [cartItemDbResult] = await dbConnection.execute(cartItemsCountQuery, [
+    req.cookies.sessionId,
+  ]);
+  const cartItemsCount = cartItemDbResult[0].count
+  res.app.locals.cartItemsCount = cartItemsCount
+  next();
+});
+
 app.listen(3000, (error) => {
   if (error) {
     console.log("server cant be started", error);

@@ -35,8 +35,27 @@ router.get("/details", async (req, res) => {
   });
 });
 
-router.post("/add-to-cart", (req, res) => {
-  const productId = Number(req.body.id)
-  const quantity = Number(req.body.quantity)
-  res.redirect("/product/details?id=12");
+router.post("/add-to-cart", async (req, res) => {
+  const productId = Number(req.body.id);
+  const quantity = Number(req.body.quantity);
+  const checkIfSessionExistsQuery = `SELECT count(*) as count FROM shop.session
+                                    where uuid = ?`;
+  const sessionIdFromCookie = req.cookies.sessionId;
+  const [checkCookieResult] = await dbConnection.execute(
+    checkIfSessionExistsQuery,
+    [sessionIdFromCookie],
+  );
+  if (checkCookieResult[0].count === 0) {
+    const insertUuidInSessionQuery = `insert into session(uuid)
+                                      values (?)`;
+    await dbConnection.execute(insertUuidInSessionQuery, [sessionIdFromCookie]);
+  }
+  const addToCartQuery = `insert into cart_item (product_id, quantity, session_uuid) 
+                            values (?, ?, ?)`;
+  await dbConnection.execute(addToCartQuery, [
+    productId,
+    quantity,
+    sessionIdFromCookie,
+  ]);
+  res.redirect(`/product/details?id=${productId}`);
 });
