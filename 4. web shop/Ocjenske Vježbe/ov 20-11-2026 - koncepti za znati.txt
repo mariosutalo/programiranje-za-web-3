@@ -1,0 +1,8 @@
+- napraviti novu stranicu na site-u:
+ - endpoint
+ - css datoteke
+ - napisati upit prema bazi i spremiti dobivene podatke u varijablu (polje, objekt, ...)
+ - u repozitoriju napredno prog za web pogledati endpoint /orders/order-details
+
+ - Kriteriji za dovoljan:
+  - napraviti endpoint, i ejs te da se odlaskom na tu rutu prikaže text zdravo
