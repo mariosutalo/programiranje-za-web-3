@@ -1,0 +1,6 @@
+implementirati košaricu na site-u
+- kada korisnik klikne na ikone košarice treba
+  otvoriti cart stranicu na kojoj će biti u tablici prikazani dodani proizvodi u košarici
+- ako nema proizvoda napisati košarica je prazna
+- stupci tablice trebaju biti: id, naziv, količina, cijena, ukupno
+- ispod tablice prikazati ukupni iznos za naplatu
